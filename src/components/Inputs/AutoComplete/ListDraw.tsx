@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import style from '../../../styles/Inputs/AutoComplete/ListDraw.module.css';
 
 interface ListDrawProps {
-  listCompany: ListCompany[]
+  listCompany: ListCompany[],
+  setValueInput: (company: string) => void;
+  setHiddenList: (hide: boolean) => void;
 }
 
-const ListDraw = ( { listCompany } : ListDrawProps) => {
+const ListDraw = ( { listCompany, setValueInput, setHiddenList } : ListDrawProps) => {
 
   const handleClick = (company: string) => {
-    
+    setValueInput(company)
+    setHiddenList(true)
   }
 
   return(

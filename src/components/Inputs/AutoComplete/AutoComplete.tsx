@@ -7,10 +7,11 @@ interface AutoCpmpleteProps {
   options: ListCompany[];
   value: string | number;
   onChange: (e: EventChange)=>void;
+  setValueInput: (company: string) => void
 }
 
-const AutoComplete = ({options, value, onChange}: AutoCpmpleteProps) => {
-
+const AutoComplete = ({options, value, onChange, setValueInput}: AutoCpmpleteProps) => {
+  const [hiddenList, setHiddenList] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<ListCompany[]>([])
 
   const selectOptions = (e: EventChange) => {
@@ -24,7 +25,7 @@ const AutoComplete = ({options, value, onChange}: AutoCpmpleteProps) => {
     setSelectedOptions(filterOptions);
     console.log(filterOptions);
   }
-
+  console.log(hiddenList)
   return(
     <div className={style.boxContainer}>
       <div className={style.container}>
@@ -35,8 +36,13 @@ const AutoComplete = ({options, value, onChange}: AutoCpmpleteProps) => {
         onChange={selectOptions} />
         <img className={style.img} src="arrow.png" alt="arrow" />
       </div>
-      <div>
-        {selectedOptions.length > 0 && <ListDraw listCompany={selectedOptions} />}
+      <div className={`${hiddenList && 'hide'}`}>
+        {selectedOptions.length > 0 &&
+         <ListDraw
+         setHiddenList={setHiddenList}
+         listCompany={selectedOptions}
+         setValueInput={setValueInput}
+         />}
       </div>
     </div>
   )

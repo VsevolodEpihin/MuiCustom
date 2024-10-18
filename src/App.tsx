@@ -16,10 +16,9 @@ const listOptions: ListCompany[] = [
 ] 
 
 const App = () => {
-  const [valueInput, setValueInput] = useState(listOptions[0].company)
+  const [valueInput, setValueInput] = useState<string>(listOptions[0].company)
 
   const handleChange = (e: EventChange) => {
-    console.log(e.target.value)
     setValueInput(e.target.value)
   }
 
@@ -29,6 +28,7 @@ const App = () => {
         options={listOptions}
         value={valueInput}
         onChange={handleChange}
+        setValueInput={setValueInput}
       />
     </div>
   );

@@ -25,3 +25,7 @@
   transform: rotate(270deg);
   cursor: pointer;
 }
+
+.hide {
+  display: none;
+}
