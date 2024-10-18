@@ -1,0 +1,19 @@
+.container {
+  cursor: pointer;
+  background-color: gray;
+  padding: 0;
+  width: 100%;
+  top: 70%;
+}
+
+.item {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  padding: 5px;
+}
+
+.item:hover {
+  background-color: rgb(209, 186, 186);
+}
