@@ -16,16 +16,15 @@ const AutoComplete = ({options, value, onChange, setValueInput}: AutoCpmpletePro
 
   const selectOptions = (e: EventChange) => {
     const filterOptions = options.filter((elem) => {
-      console.log(e.target.value)
-      console.log(elem)
+
       return elem.company.toLowerCase().startsWith(e.target.value.toLowerCase())
     })
-    
+
     onChange(e)
     setSelectedOptions(filterOptions);
-    console.log(filterOptions);
+
   }
-  console.log(hiddenList)
+
   return(
     <div className={style.boxContainer}>
       <div className={style.container}>
@@ -36,7 +35,7 @@ const AutoComplete = ({options, value, onChange, setValueInput}: AutoCpmpletePro
         onChange={selectOptions} />
         <img className={style.img} src="arrow.png" alt="arrow" />
       </div>
-      <div className={`${hiddenList && 'hide'}`}>
+      <div className={`${hiddenList && style.hide}`}>
         {selectedOptions.length > 0 &&
          <ListDraw
          setHiddenList={setHiddenList}

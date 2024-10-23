@@ -10,6 +10,7 @@
   width: 100%;
   list-style: none;
   display: flex;
+  overflow: hidden;
   justify-content: start;
   padding: 5px;
 }

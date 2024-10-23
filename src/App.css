@@ -1,9 +1,9 @@
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
 }
 
 .App-logo {
@@ -39,4 +39,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-container button {
+  margin: 5px;
+}
+
+.container {
+  margin: 10%;
 }

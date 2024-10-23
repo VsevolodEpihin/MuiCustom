@@ -1,0 +1,10 @@
+.text > button {
+  border: none;
+  background-color: transparent;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.text > button:hover {
+  background-color: rgb(197, 196, 196);
+}

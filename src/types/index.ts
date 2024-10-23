@@ -4,3 +4,4 @@ interface ListCompany {
 }
 
 type EventChange = React.ChangeEvent<HTMLInputElement>
+type ButtonVariant = 'text' | 'contained' | 'outlined' | 'disabled';
